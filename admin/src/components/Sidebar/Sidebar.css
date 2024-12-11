@@ -1,0 +1,67 @@
+/* Styling Sidebar */
+.sidebar {
+  width: 20%;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  border-right: 2.3px solid #e3631b;
+  font-size: max(1vw, 10px);
+  transition: all 0.3s ease-in-out;
+  padding-top: 20px;
+}
+
+/* Sidebar options container */
+.sidebar-options {
+  padding-top: 20px;
+  padding-left: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 16px;
+}
+
+/* Individual sidebar option */
+.sidebar-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 3px solid #e3631b;
+  border-right: 1;
+  padding: 12px 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-right: 50px; /* Memberikan jarak antara elemen dan garis border */
+}
+
+/* Hover and active states for sidebar options */
+.sidebar-option:hover,
+.sidebar-option.active {
+  background-color: #fff0ed;
+  border-color: #e3631b;
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-option p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* Hide text and show icons only on small screens */
+@media (max-width: 900px) {
+  .sidebar-option p {
+    display: none; /* Hide text on small screens */
+  }
+
+  .sidebar-option {
+    gap: 10px; /* Reduce gap when text is hidden */
+  }
+
+  .sidebar-option img {
+    width: 20px; /* Adjust icon size for smaller screens */
+    height: 20px;
+  }
+}

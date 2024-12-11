@@ -1,0 +1,224 @@
+/* Navbar Styling */
+.navbar {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 10px auto;
+  border-bottom: 2px solid #e8712c;
+}
+
+.navbar .logo {
+  width: 150px;
+  height: auto;
+}
+
+.navbar-menu li {
+  display: inline-block;
+  margin-right: 15px;
+  position: relative;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #49557e;
+  padding: 12px 20px; /* Perbesar padding untuk membuat kotak lebih besar */
+  border-radius: 8px; /* Buat sudut kotak lebih melengkung */
+  font-size: 18px; /* Perbesar ukuran teks */
+  font-weight: 500; /* Tambahkan ketebalan teks */
+  transition: all 0.3s ease; /* Transisi halus */
+}
+
+/* Kotak berubah warna saat hover */
+.navbar-menu a:hover {
+  color: tomato;
+}
+
+/* Kotak berubah warna jika aktif */
+.navbar-menu .active {
+  background-color: #e8712c; /* Warna latar kotak jika aktif */
+  color: white;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-search-icon {
+  position: relative;
+  width: 35px;
+}
+
+.navbar-search-icon img {
+  width: 100%;
+  height: auto;
+}
+
+/* Dot pada ikon cart jika ada item */
+.navbar-search-icon .dot {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e8712c;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar button {
+  background: transparent;
+  font-size: 14px;
+  color: #49557e;
+  border: 1px solid tomato;
+  padding: 8px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background-color: #fff4f2;
+}
+
+.navbar-profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-profile-dropdown {
+  position: absolute;
+  display: none; /* Dropdown disembunyikan secara default */
+  top: 39px; /* Menambahkan jarak dari atas */
+  left: 70%; /* Menempatkan dropdown di tengah secara horizontal */
+  transform: translateX(-95%); /* Menggeser elemen ke kiri sebesar 50% dari lebar dropdown untuk benar-benar tengah */
+  z-index: 1;
+  background-color: #fff4f2; /* Latar belakang kotak dropdown */
+  padding: 10px 15px;
+  border-radius: 5px; /* Sudut kotak melengkung */
+  border: 1px solid tomato; /* Garis border warna tomato */
+  outline: 3px solid white; /* Outline putih untuk efek */
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  list-style: none;
+  gap: 8px;
+}
+
+.navbar-profile .nav-profile-dropdown {
+  display: block; /* Menampilkan dropdown saat state isProfileMenuVisible true */
+}
+
+.nav-profile-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.nav-profile-dropdown img {
+  width: 18px;
+}
+
+.nav-profile-dropdown li:hover {
+  color: tomato; /* Warna berubah saat hover pada item */
+}
+
+/* Menampilkan dropdown menu jika aktif */
+.navbar-profile:hover .nav-profile-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-profile.active .nav-profile-dropdown {
+  display: flex;
+}
+
+/* Mobile menu styling */
+@media (max-width: 1050px) {
+  .navbar .logo {
+    width: 160px;
+  }
+  .navbar-menu {
+    gap: 15px;
+    font-size: 15px;
+  }
+  .navbar-right {
+    gap: 25px;
+  }
+  .navbar-right img {
+    width: 20px;
+  }
+  .nav-right button {
+    padding: 7px 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar .logo {
+    width: 140px;
+  }
+  .navbar-menu {
+    gap: 12px;
+    font-size: 14px;
+  }
+  .navbar-right {
+    gap: 20px;
+  }
+  .navbar-right img {
+    width: 18px;
+  }
+  .nav-right button {
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+}
+
+/* Sembunyikan menu dan tampilkan hamburger untuk layar kecil */
+@media (max-width: 750px) {
+  .navbar-menu {
+    display: none; /* Sembunyikan menu di perangkat mobile */
+  }
+
+  .navbar-hamburger {
+    display: block; /* Tampilkan tombol hamburger di layar kecil */
+    cursor: pointer;
+    font-size: 20px;
+    color: tomato;
+  }
+
+  .navbar-hamburger.active {
+    color: orange;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+  .navbar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    display: none;
+  }
+
+  .navbar-menu.active + .navbar-overlay {
+    display: block;
+  }
+}

@@ -1,0 +1,30 @@
+GET http://localhost:5000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsIm5hbWUiOiJSaWZreVNlcHRpYW5hUml6a2kyIiwiZW1haWwiOiJyaWZreTEyMzRAZ21haWwuY29tIiwiaWF0IjoxNzMxNTAwMjA1LCJleHAiOjE3MzE1MDIwMDV9.a06uYTzYjqoQPaPuZX8kH-TqaFFvzawrZKrNSEliQPA
+
+###
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "name" : "RifkySeptianaRizki2",
+    "email" : "rifky1234@gmail.com",
+    "password" : "rifky123245",
+    "confPassword" : "rifky123245"
+}
+
+###
+POST http://localhost:5000/api/login
+Content-Type: application/json
+
+{
+    "email": "test2@gmail.com",
+    "password": "12345678"
+}
+
+###
+POST http://localhost:5000/api/token
+###
+DELETE http://localhost:5000/api/logout
+
+###
+POST http://localhost:5000/api/cart/add

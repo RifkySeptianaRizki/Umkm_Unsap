@@ -1,0 +1,125 @@
+.add {
+  width: 1000px;
+  height: 610px;
+  margin-left: max(5vw, 25px);
+  margin-top: 50px;
+  color: #e3631b;
+  font-size: 16px;
+  background-color: #fff;
+  padding: 30px;
+  padding-bottom: 10px;
+  border-radius: 8px 8px 20px 20px;
+  box-shadow: 0 1px 6px rgb(189, 87, 4);
+  min-height: 400px; /* Tambahkan min-height untuk mencegah konten terpotong */
+  overflow: auto; /* Menangani overflow konten */
+}
+
+/* Styling untuk form di dalam .add */
+.add form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Styling untuk upload gambar */
+.add-img-upload img {
+  width: 120px;
+  border-radius: 8px; /* Sudut melengkung untuk gambar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Bayangan untuk gambar */
+  transition: all 0.3s ease; /* Transisi saat hover */
+}
+
+/* Efek hover pada gambar */
+.add-img-upload img:hover {
+  transform: scale(1.05); /* Efek pembesaran sedikit pada gambar */
+}
+
+/* Styling untuk input dan textarea */
+.add-product-name,
+.add-product-description {
+  width: max(40%, 280px);
+  display: flex;
+  flex-direction: column;
+}
+
+.add-product-name input,
+.add-product-description textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #e3631b;
+  border-radius: 8px;
+  transition: all 0.3s ease; /* Transisi untuk input */
+}
+
+.add-product-name input:focus,
+.add-product-description textarea:focus {
+  border-color: #d4521c; /* Warna border saat fokus */
+  outline: none; /* Menghilangkan outline */
+}
+
+/* Styling untuk kategori dan harga */
+.add-category-price {
+  display: flex;
+  gap: 30px;
+}
+
+.add-category-price select,
+.add-category-price input {
+  max-width: 120px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #e3631b;
+  transition: all 0.3s ease;
+}
+
+.add-category-price select:focus,
+.add-category-price input:focus {
+  border-color: #d4521c; /* Warna border saat fokus */
+  outline: none;
+}
+
+/* Styling untuk tombol submit */
+.add-btn {
+  max-width: 120px;
+  padding: 12px;
+  background-color: #e3631b;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #d4521c; /* Warna saat hover */
+}
+
+/* Untuk layar kecil, mengatur lebar form dan elemen */
+@media (max-width: 900px) {
+  .add {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .add-product-name,
+  .add-product-description,
+  .add-category-price {
+    width: 100%;
+  }
+
+  .add-category-price {
+    flex-direction: column;
+  }
+
+  .add-category-price select,
+  .add-category-price input {
+    max-width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
+    max-width: none;
+  }
+}

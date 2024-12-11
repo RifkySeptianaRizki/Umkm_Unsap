@@ -1,0 +1,220 @@
+/* Form Place Order */
+.place-order {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.place-order-left {
+  width: 100%;
+  max-width: 35%;
+}
+
+.place-order-left .title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.place-order-left input {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+.place-order-left input:focus {
+  border-color: #e3631b;
+  box-shadow: 0 0 5px rgba(227, 99, 27, 0.5);
+}
+
+.place-order-left .multi-fields {
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.place-order-right {
+  width: 100%;
+  max-width: 55%;
+}
+
+.cart-total {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #555;
+}
+
+.cart-total button {
+  margin-top: 30px;
+  padding: 10px 15px;
+  background: #e3631b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.cart-total button:hover {
+  background: #d04f14;
+}
+
+/* Payment Method */
+.payment {
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Jarak antar metode pembayaran */
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: 0.3s ease;
+  flex: 1 1 calc(50% - 30px); /* Menyesuaikan agar tetap dua kolom */
+  max-width: calc(50% - 30px); /* Memastikan batas maksimum */
+}
+
+.payment-method:hover {
+  border-color: #e3631b;
+  background: #fff;
+}
+
+.payment-method input {
+  display: none; /* Sembunyikan radio button */
+}
+
+.payment-method img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain; /* Menjaga proporsi gambar */
+}
+
+.payment-method span {
+  font-size: 14px;
+  color: #333;
+}
+
+.payment-method input:checked + img + span {
+  font-weight: bold;
+  color: #e3631b;
+}
+
+/* Atau jika ingin mengubah border pada seluruh label yang mengandung input radio */
+.payment-method input:checked {
+  border: 2px solid #e3631b; /* Border oranye pada label */
+  background: #fff; /* Ganti latar belakang menjadi putih */
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .payment-method {
+    flex: 1 1 100%; /* Semua metode menjadi satu kolom di layar kecil */
+    max-width: 100%;
+  }
+
+  .place-order {
+    flex-direction: column; /* Form diatur vertikal untuk layar kecil */
+  }
+
+  .place-order-left,
+  .place-order-right {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .place-order-left .title {
+    font-size: 20px;
+  }
+
+  .cart-total h2 {
+    font-size: 20px;
+  }
+
+  .cart-total-details {
+    font-size: 14px;
+  }
+
+  .payment-method img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.warning-message {
+  color: #e3631b;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* New CSS for displaying products in PlaceOrder */
+.cart-items-summary {
+  margin-top: 20px;
+}
+
+.cart-items-summary .cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.cart-items-summary .cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cart-items-summary .cart-item .item-name {
+  flex: 1;
+  padding-left: 10px;
+}
+
+.cart-items-summary .cart-item .item-price,
+.cart-items-summary .cart-item .item-quantity,
+.cart-items-summary .cart-item .item-total {
+  text-align: right;
+}
+
+.cart-items-summary .cart-item .item-price,
+.cart-items-summary .cart-item .item-quantity,
+.cart-items-summary .cart-item .item-total {
+  font-weight: bold;
+}
+
+.cart-items-summary .cart-item .item-total {
+  color: #e3631b;
+}

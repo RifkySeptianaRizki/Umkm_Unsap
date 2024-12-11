@@ -1,0 +1,43 @@
+.list-table-format {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr; /* Tetap seperti di laptop */
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #cacaca;
+  font-size: 13px;
+  text-align: center;
+}
+
+.list-table-format.title {
+  background-color: #e3631b;
+  color: white;
+}
+
+.list-table-format img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin: auto;
+}
+
+.list-table-format > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button {
+  background-color: #e3631b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #d2541a;
+}
